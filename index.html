@@ -1,0 +1,336 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Getting Atomic with Pattern Lab</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/league.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <style type="text/css">
+      .reveal h2, .reveal h3 {
+        text-transform: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h2>Getting Atomic with Pattern Lab</h2>
+        </section>
+
+        <section>
+          <h3>Who am I?</h3>
+          <ul>
+            <li class="fragment fade-in">Aaron Froehlich</li>
+            <li class="fragment fade-in">a-fro (d.o)</li>
+            <li class="fragment fade-in">a-fro.com</li>
+            <li class="fragment fade-in">@aaronfroehlich</li>
+            <li class="fragment fade-in">aaronf@cornell.edu</li>
+            <li class="fragment fade-in">Husband, father, builder</li>
+          </ul>
+
+        </section>
+
+        <section  data-background="https://brand.ilr.cornell.edu/themes/custom/prism/components/images/svg/ILR-nickname-reversed.svg" data-background-size="25%" data-background-position="5% 4%">
+          <p>Technical Lead, ILR School</p>
+
+          <aside class="notes">
+
+          </aside>
+        </section>
+
+        <section>
+          <section><h3>Where are we going?</h3></section>
+
+          <section data-background="https://pcfandtypecodewebstuff.s3.amazonaws.com/images/KrR8-3.mod.PCF.9801_M01_00.max-1600x1600.jpg"><span style="color: #222">You are here</span></section>
+          <section data-background="https://i.pinimg.com/originals/d0/6e/1d/d06e1db93c3561e7896d85d819ac2cf1.jpg"></section>
+          <section data-background="https://i.ytimg.com/vi/jo3VrrKDMV8/maxresdefault.jpg"></section>
+          <section data-background="https://cdn.arstechnica.net/wp-content/uploads/2017/08/TNG-Transporter.jpg"></section>
+          <section data-background-size="50%" data-background="images/d8_render_pipeline_0.jpg"></section>
+          <aside class="notes">
+            Covering a lot of ground<br>
+            diving deep into d8 rendering<br>
+            jk!<br>
+            Will be a mix of overview and diving in<br>
+            star trek<br>
+            big thanks to the Emulsify team at 4k<br>
+            devshop
+          </aside>
+        </section>
+
+        <section>Demo Umami</section>
+
+        <section>
+          <section>
+            <h3>Where have we been?</h3>
+            <aside class="notes">
+              Quick overview of web development<br>
+              kind of an old guy
+              my story starts in 2000
+            </aside>
+          </section>
+          <section data-background="https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/1573157f-8776-4415-9001-159c4874ffc6/yahoo-com.png" data-background-size="500px"></section>
+          <section data-background="http://i.giphy.com/26gsgkMKC6tuif7rO.gif" data-background-size="100%"></section>
+          <section>
+            <span class="fade-in-then-out">Cascading styles!</span>
+            <span class="fade-in-then-out"></span>
+          </section>
+          <section data-markdown>
+            <textarea data-template>
+              <pre><code class="html">
+                  <title>My first web page!</title>
+                  <style type="text/css">
+                    a {
+                      color: #ff0000;
+                      text-decoration: none;
+                      border: 1px double #ff0000;
+                      text-transform: uppercase;
+                    }
+                  </style>
+                </head>
+                <body>
+                  <a href="webmaster.htm">About me</a>
+                </body>
+                </html>
+              </code></pre>
+            </textarea>
+            <aside class="notes">Any other webmasters in the room?</aside>
+          </section>
+          <section data-background="http://i.giphy.com/cFOaorIxCo8Ra.gif" data-background-size="100%">
+          </section>
+          <section>
+            <span class="fade-in-then-out">Responsive!</span>
+            <span class="fade-in-then-out"></span>
+          </section>
+          <section>
+            <iframe width="80%" height="400px" src="https://alistapart.com/d/responsive-web-design/ex/ex-site-linearize.html"></iframe>
+          </section>
+          <section>
+            <img data-src="http://bradfrost.com/wp-content/uploads/2011/06/real_web.jpg">
+            <aside class="notes">As systems grow in complexity, they naturally become more organized</aside>
+          </section>
+          <section>
+            <img src="https://s3.amazonaws.com/designco-web-assets/uploads/2017/11/UIaudit2.png">
+          </section>
+          <section>
+            <img width="30%" data-src="https://images-na.ssl-images-amazon.com/images/I/81fwUociBqL._SY879_.jpg" alt="Evolution towards complexity, specialization and efficiency">
+            <aside class="notes">Why? - successful systems select for efficiency</aside>
+          </section>
+        </section>
+
+        <section> <!-- Where are we now -->
+          <section><h2>Where are we now?</h2></section>
+          <section><p class="fade-in">From pages..</p></section>
+          <section><img src="https://www.drupal.org/files/project-images/classic_example_0.png"></section>
+          <section>...to patterns</section>
+          <section>
+            <img src="https://alistapart.com/d/432/jackson_charlotte_00.jpg">
+            <aside class="notes">
+              Brad Frost's Interface inventory<br>
+              Interface builders like gutenberg
+            </aside>
+          </section>
+          <section>
+            ...to systems
+            <blockquote class="fragment">
+            &ldquo;A set of objects <span class="fragment">governed by rules.&rdquo;</span>
+            <aside class="notes">who said?</aside>
+          </blockquote>
+          <span class="fragment" style="display: block; text-align: right;"><h6>&mdash;Aaron Froehlich</h6></span>
+          </section>
+          <section>
+            <img src="https://images.ctfassets.net/7jw9uvgmirvi/7zKdHKUl7U02IKaEUYemUw/a9bc40e9231d07cacf8017bc7ea8ca18/DLS_Core_-_Navigation.jpg">
+          </section>
+          <section>
+            <img src="https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2015/03/materialdesign-730x315.jpg">
+          </section>
+          <!-- @todo: figure out where/if.. -->
+          <!-- <section>
+            <img src="https://www.shoutmeloud.com/wp-content/uploads/2018/01/what-is-the-wordpress-gutenberg-editor-4.gif">
+          </section> -->
+        </section> <!-- End where are we now -->
+
+        <section> <!-- How are these problems being solved? -->
+          <section>
+            <img src="http://atomicdesign.bradfrost.com/images/content/instagram-atomic.png">
+            <aside class="notes">
+              Enter Pattern Lab<br>
+              pl as tool to visualize a design system<br>
+              see http://mayflower.digital.mass.gov
+            </aside>
+          </section>
+          <section>add atomic image here with Umami
+            <aside class="notes">Looking for Efficiency, Consistency, Flexibility</aside>
+          </section>
+          <section data-transition="slide-in fade-out">
+            <h2>Search for the Holy Grail</h2>
+            <img class="" src="https://thelittle.org/sites/default/files/imges/film/2.COLOR_galloping%20knights.jpg">
+          </section>
+          <section data-transition="fade-in slide-out">
+            <h2>Search for the Holy Grail</h2>
+            <img src="https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/5c023870-8b32-447b-847d-b47b1b8a9f64/pattern-lab-2-image-16-large-opt.png">
+          </section>
+        </section>
+
+        <!-- How do you do it? -->
+        <section>
+          <section>
+            <h2>Existing projects</h2>
+            <ul>
+              <li>Interface inventory</li>
+              <li>Looking for inconsistencies</li>
+              <li>Creating a shared vocabulary</li>
+            </ul>
+          </section>
+          <section>
+            <h2>New projects</h2>
+            becomes a laboratory
+            Rapid prototyping
+            Decouples your content store from your content interfaces
+          </section>
+          <section>
+            <h2>Umami</h2>
+            <ul>
+              <li>Quick walkthrough of Drupal site</li>
+              <li>Show from D.0 Issue queue</li>
+              <li>@todo: mark up final version</li>
+            </ul>
+          </section>
+        </section>
+
+        <!-- Walkthrough umami pl -->
+        <section>
+          <!--
+            Go to PatternLab.io
+            Enter Emulsify
+              what's in the box?
+           -->
+          <section>
+            <h3>Back to Demo Umami</h3>
+          </section>
+          <!-- <section>
+<pre><code class="html"><div id="block-umami-banner-recipes" class="block-type-banner-block block block-block-content block-block-content4c7d58a3-a45d-412d-9068-259c57e40541 cover-image" style="background-image: url(/sites/default/files/veggie-pasta-bake-hero-umami.jpg)">
+  <div class="block-inner">
+    <div class="field field--name-field-banner-image field--type-image field--label-hidden field__item">
+      <img src="/sites/default/files/styles/scale_crop_7_3_large/public/veggie-pasta-bake-hero-umami.jpg?itok=MmYZtecW" width="1440" height="617" alt="Mouth watering vegetarian pasta bake with rich tomato sauce and cheese toppings" typeof="foaf:Image" class="image-style-scale-crop-7-3-large" />
+    </div>
+    <div class="summary">
+      <div class="field field--name-field-title field--type-string field--label-hidden field__item">
+        Super easy vegetarian pasta bake
+      </div>
+
+      <div class="field field--name-field-summary field--type-string-long field--label-hidden field__item">
+        A wholesome pasta bake is the ultimate comfort food. This delicious bake is super quick to prepare and an ideal midweek meal for all the family.
+      </div>
+
+      <div class="field field--name-field-content-link field--type-link field--label-hidden field__item">
+        <a href="/recipes/super-easy-vegetarian-pasta-bake">
+          Super easy vegetarian pasta bake
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+          </code></pre>
+          </section> -->
+          <section>
+            Let's try it out!
+            <aside class="notes">with full walkthrough</aside>
+          </section>
+          <section>
+            Pattern Lab walkthrough
+            <aside class="notes">
+              Finish with some demo of yml data
+            </aside>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h3>Enter Drupal</h3>
+            <aside class="notes">
+              Don't fight Drupal<br>
+              let it be good at what it is<br>
+              accessibility
+            </aside>
+          </section>
+          <section>
+            <img src="https://www.ostraining.com/cdn/images/steve/media_1395329451848.png">
+          </section>
+          <section>
+            <pre><code class="twig">{% set link = content.field_content_link|field_value[0] %}
+{% include "@molecules/recipe-banner/recipe-banner.twig" with {
+  "banner_image_output_image_tag": TRUE,
+  "banner_title": content.field_title|field_value,
+  "banner_summary": content.field_summary|field_value,
+  "banner_link_url": link['#url'],
+  "banner_link_text": link['#title']
+}%}
+            </code></pre>
+          </section>
+          <section>
+            <h3>What gets rendered?</h3>
+            <ul>
+              <li class="fragment">fields</li>
+              <li class="fragment">nodes</li>
+              <li class="fragment">blocks</li>
+              <li class="fragment">views</li>
+              <li class="fragment">forms</li>
+              <li class="fragment">entities (i.e. paragraph bundles)</li>
+              <li class="fragment">layouts</li>
+              <li class="fragment">media</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <h3>Further Resources and Frontiers</h3>
+          <ul>
+            <li class="fragment">Drupal Twig Slack: https://drupaltwig-slack.herokuapp.com</li>
+            <li class="fragment">Emulsify.info</li>
+            <li class="fragment">Mark Conroy's blog: https://mark.ie</li>
+            <li class="fragment">https://github.com/forumone/gesso-wp</li>
+            <li class="fragment">a-fro.com</li>
+            <li class="fragment">We're hiring!</li>
+          </ul>
+        </section>
+        <section>
+          images
+        </section>
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        history: true,
+        dependencies: [
+          { src: 'plugin/markdown/marked.js' },
+          { src: 'plugin/markdown/markdown.js' },
+          { src: 'plugin/notes/notes.js', async: true },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+          // { src: 'socket.io/socket.io.js', async: true },
+          // { src: 'plugin/notes-server/client.js', async: true }
+        ]
+      });
+    </script>
+  </body>
+</html>
