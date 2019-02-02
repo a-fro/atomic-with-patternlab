@@ -26,42 +26,74 @@
       }
     </style>
   </head>
+  <!-- @todo: consider chapters as user stories?
+    As a ...
+      - webmaster, I can create content for the web and make it look...unique
+      - programmer, I can build a custom cms to allow others to add content to the web
+      - front end developer, I can take cms content and make it "pop" on any size screen
+      - senior developer, I can build interfaces that make it simple and fun to create content while gathering KPI's
+        to improve our experience
+      - as a front-end engineer, I can construct a design system to make our site more predictable and user-friendly
+      - design architect, I can drink from the holy grail and achieve immortality
+  -->
   <body>
     <div class="reveal">
       <div class="slides">
         <section>
           <h2>Getting Atomic with Pattern Lab</h2>
         </section>
-
         <section>
-          <h3>Who am I?</h3>
-          <ul>
-            <li class="fragment fade-in">Aaron Froehlich</li>
-            <li class="fragment fade-in">a-fro (d.o)</li>
-            <li class="fragment fade-in">a-fro.com</li>
-            <li class="fragment fade-in">@aaronfroehlich</li>
-            <li class="fragment fade-in">aaronf@cornell.edu</li>
-            <li class="fragment fade-in">Husband, father, builder</li>
-          </ul>
+          <section data-transition="fade-out">
+            <h3>Who am I?</h3>
+            <p class="fragment">Aaron Froehlich</p>
+            <ul style="opacity: 0">
+              <li>Technical Lead, ILR School at Cornell</li>
+              <li>a-fro (d.o)</li>
+              <li>a-fro.com</li>
+              <li>@aaronfroehlich</li>
+              <li>aaronf@cornell.edu</li>
+              <li>Husband, father, builder</li>
+            </ul>
 
+          </section>
+
+          <section data-transition="fade-in slide-out" data-background="https://brand.ilr.cornell.edu/themes/custom/prism/components/images/svg/ILR-nickname-reversed.svg" data-background-size="25%" data-background-position="5% 4%">
+            <h3>Who am I?</h3>
+            <p>Aaron Froehlich</p>
+            <ul>
+              <li>Technical Lead, ILR School at Cornell</li>
+              <li>a-fro (d.o)</li>
+              <li>a-fro.com</li>
+              <li>@aaronfroehlich</li>
+              <li>aaronf@cornell.edu</li>
+              <li>Husband, father, builder</li>
+            </ul>
+
+          </section>
         </section>
 
-        <section  data-background="https://brand.ilr.cornell.edu/themes/custom/prism/components/images/svg/ILR-nickname-reversed.svg" data-background-size="25%" data-background-position="5% 4%">
-          <p>Technical Lead, ILR School</p>
-
-          <aside class="notes">
-
-          </aside>
-        </section>
-
         <section>
-          <section><h3>Where are we going?</h3></section>
+          <section><h3>Where are we going?</h3>
+            <aside class="notes">
+              Just to say a little bit about my experience with Pattern Lab. I had started playing with Pattern Lab in Drupal two years ago, just before Drupalcon Baltimore. While there, I attended the component based training that Forum One put on as well as Evan Lovely's session on their use of PL at Pinterest. I also started talking more with Evan Willhite from Four Kitchens. The enthusiasm I witnessed not only got me really excited about PL, I was also quickly able to leverage Emulsify, which is the Drupal theme that 4K created and probably the most popular theme currently in use by the community. Since then, I've built 4 or 5 Drupal sites with PL, though frankly, my time and energy has been stretched too thin and I feel like I still have a lot to learn. The last time I gave this talk, we were working hard to hire another developer. Thankfully, he joined our team last month, which will give us a lot more time to focus and improve our processes. The last thing I'll mention before diving in is that I feel like best practices are still emerging. With any technology, there are a lot of different ways to solve a given problem, and I still find it hard to figure out when and why to choose "a" over "b", or vice-versa. I'm hoping that the Umami Pattern Lab we'll look at today could become a project that the community of folks who are doing PL might come together to use as a sandbox and explanation of options which could lead to clearer definitions of best practices.
+
+            </aside>
+          </section>
 
           <section data-background="https://pcfandtypecodewebstuff.s3.amazonaws.com/images/KrR8-3.mod.PCF.9801_M01_00.max-1600x1600.jpg"><span style="color: #222">You are here</span></section>
           <section data-background="https://i.pinimg.com/originals/d0/6e/1d/d06e1db93c3561e7896d85d819ac2cf1.jpg"></section>
           <section data-background="https://i.ytimg.com/vi/jo3VrrKDMV8/maxresdefault.jpg"></section>
           <section data-background="https://cdn.arstechnica.net/wp-content/uploads/2017/08/TNG-Transporter.jpg"></section>
-          <section data-background-size="50%" data-background="images/d8_render_pipeline_0.jpg"></section>
+          <!-- <section data-background-size="50%" data-background="images/d8_render_pipeline_0.jpg"></section> -->
+          <!-- today...we embark on a journey, a quest, of sorts... -->
+          <section data-transition="slide-in fade-out">
+            <h3>Search for the Holy Grail</h3>
+            <img class="" src="https://thelittle.org/sites/default/files/imges/film/2.COLOR_galloping%20knights.jpg">
+          </section>
+          <section data-transition="fade-in slide-out">
+            <h3>Search for the Holy Grail</h3>
+            <img src="https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/5c023870-8b32-447b-847d-b47b1b8a9f64/pattern-lab-2-image-16-large-opt.png">
+          </section>
           <aside class="notes">
             Covering a lot of ground<br>
             diving deep into d8 rendering<br>
@@ -73,8 +105,7 @@
           </aside>
         </section>
 
-        <section>Demo Umami</section>
-
+        <!-- Where have we been? -->
         <section>
           <section>
             <h3>Where have we been?</h3>
@@ -111,14 +142,17 @@
             </textarea>
             <aside class="notes">Any other webmasters in the room?</aside>
           </section>
-          <section data-background="http://i.giphy.com/cFOaorIxCo8Ra.gif" data-background-size="100%">
+          <section data-background="http://i.giphy.com/cFOaorIxCo8Ra.gif" data-background-size="50%">
+          </section>
+          <section data-background="https://i.makeagif.com/media/4-06-2015/j0BFRo.gif" data-background-size="50%"></section>
+          <section><h3>Enter&hellip;</h3>
+            <p>PHP&hellip; CMS&hellip; MVC&hellip; Templating&hellip; jQuery&hellip;</p></section>
+          <section>
+            <iframe width="80%" height="400px" src="https://alistapart.com/d/responsive-web-design/ex/ex-site-linearize.html"></iframe>
           </section>
           <section>
             <span class="fade-in-then-out">Responsive!</span>
             <span class="fade-in-then-out"></span>
-          </section>
-          <section>
-            <iframe width="80%" height="400px" src="https://alistapart.com/d/responsive-web-design/ex/ex-site-linearize.html"></iframe>
           </section>
           <section>
             <img data-src="http://bradfrost.com/wp-content/uploads/2011/06/real_web.jpg">
@@ -133,8 +167,9 @@
           </section>
         </section>
 
-        <section> <!-- Where are we now -->
-          <section><h2>Where are we now?</h2></section>
+        <!-- Where are we now -->
+        <section>
+          <section><h3>Where are we now?</h3></section>
           <section><p class="fade-in">From pages..</p></section>
           <section><img src="https://www.drupal.org/files/project-images/classic_example_0.png"></section>
           <section>...to patterns</section>
@@ -155,17 +190,13 @@
           </section>
           <section>
             <img src="https://images.ctfassets.net/7jw9uvgmirvi/7zKdHKUl7U02IKaEUYemUw/a9bc40e9231d07cacf8017bc7ea8ca18/DLS_Core_-_Navigation.jpg">
+            <aside class="notes">
+              "Single source of Truth"
+            </aside>
           </section>
           <section>
             <img src="https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2015/03/materialdesign-730x315.jpg">
           </section>
-          <!-- @todo: figure out where/if.. -->
-          <!-- <section>
-            <img src="https://www.shoutmeloud.com/wp-content/uploads/2018/01/what-is-the-wordpress-gutenberg-editor-4.gif">
-          </section> -->
-        </section> <!-- End where are we now -->
-
-        <section> <!-- How are these problems being solved? -->
           <section>
             <img src="http://atomicdesign.bradfrost.com/images/content/instagram-atomic.png">
             <aside class="notes">
@@ -174,91 +205,71 @@
               see http://mayflower.digital.mass.gov
             </aside>
           </section>
-          <section>add atomic image here with Umami
+          <section>
+            <img src="images/atomic-umami.jpg">
             <aside class="notes">Looking for Efficiency, Consistency, Flexibility</aside>
           </section>
-          <section data-transition="slide-in fade-out">
-            <h2>Search for the Holy Grail</h2>
-            <img class="" src="https://thelittle.org/sites/default/files/imges/film/2.COLOR_galloping%20knights.jpg">
-          </section>
-          <section data-transition="fade-in slide-out">
-            <h2>Search for the Holy Grail</h2>
-            <img src="https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/5c023870-8b32-447b-847d-b47b1b8a9f64/pattern-lab-2-image-16-large-opt.png">
-          </section>
-        </section>
+        </section> <!-- End where are we now -->
 
-        <!-- How do you do it? -->
+        <!-- How are these problems being solved? -->
         <section>
+          <section><h3>How do we solve these problems?</h3></section>
           <section>
-            <h2>Existing projects</h2>
-            <ul>
-              <li>Interface inventory</li>
-              <li>Looking for inconsistencies</li>
-              <li>Creating a shared vocabulary</li>
+            <h3>Existing projects <span class="fragment">- Interface inventory</span></h3>
+              <img class="fragment" width="50%" src="images/inventory.jpg" />
             </ul>
+            <aside class="notes">
+              looking for inconsistencies
+              Creating a shared vocabulary
+            </aside>
           </section>
           <section>
-            <h2>New projects</h2>
-            becomes a laboratory
-            Rapid prototyping
-            Decouples your content store from your content interfaces
+            <h3>New projects <span class="fragment">- Styleguide</span></h3>
+            <img class="fragment" width="25%" src="images/styleguide-v0.jpg" />
+            <aside class="notes">
+              becomes a laboratory
+              Rapid prototyping
+              Decouples your content store from your content interfaces
+            </aside>
           </section>
           <section>
-            <h2>Umami</h2>
-            <ul>
-              <li>Quick walkthrough of Drupal site</li>
-              <li>Show from D.0 Issue queue</li>
-              <li>@todo: mark up final version</li>
-            </ul>
+            <h3>Demo Umami Quicktour</h3>
+          </section>
+
+          <section data-transition="slide-in fade-out">
+            <h3>Umami</h3>
+            <img width="50%" src="images/home1-pre.jpg" />
+          </section>
+          <section data-transition="slide-out fade-in">
+            <h3>Umami</h3>
+            <img width="50%" src="images/home1-labeled.jpg" />
           </section>
         </section>
 
         <!-- Walkthrough umami pl -->
         <section>
+          <section><h3>Enter Pattern Lab</h3></section>
           <!--
             Go to PatternLab.io
             Enter Emulsify
               what's in the box?
+
            -->
           <section>
-            <h3>Back to Demo Umami</h3>
-          </section>
-          <!-- <section>
-<pre><code class="html"><div id="block-umami-banner-recipes" class="block-type-banner-block block block-block-content block-block-content4c7d58a3-a45d-412d-9068-259c57e40541 cover-image" style="background-image: url(/sites/default/files/veggie-pasta-bake-hero-umami.jpg)">
-  <div class="block-inner">
-    <div class="field field--name-field-banner-image field--type-image field--label-hidden field__item">
-      <img src="/sites/default/files/styles/scale_crop_7_3_large/public/veggie-pasta-bake-hero-umami.jpg?itok=MmYZtecW" width="1440" height="617" alt="Mouth watering vegetarian pasta bake with rich tomato sauce and cheese toppings" typeof="foaf:Image" class="image-style-scale-crop-7-3-large" />
-    </div>
-    <div class="summary">
-      <div class="field field--name-field-title field--type-string field--label-hidden field__item">
-        Super easy vegetarian pasta bake
-      </div>
-
-      <div class="field field--name-field-summary field--type-string-long field--label-hidden field__item">
-        A wholesome pasta bake is the ultimate comfort food. This delicious bake is super quick to prepare and an ideal midweek meal for all the family.
-      </div>
-
-      <div class="field field--name-field-content-link field--type-link field--label-hidden field__item">
-        <a href="/recipes/super-easy-vegetarian-pasta-bake">
-          Super easy vegetarian pasta bake
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
-          </code></pre>
-          </section> -->
-          <section>
-            Let's try it out!
-            <aside class="notes">with full walkthrough</aside>
+            <p><a target="_blank" href="http://patternlab.io">patternlab.io</a></p>
           </section>
           <section>
-            Pattern Lab walkthrough
+            <h3>Umami Pattern Lab</h3>
+            <a target="_blank" href="http://localhost:3000/pattern-lab/public/?p=pages-home"><img  width="50%" src="images/home1-pre.jpg" /></a>
             <aside class="notes">
-              Finish with some demo of yml data
+             @todo
+              Be sure to show both yml data and variations
+              Discuss demo "pages" and note difference from templates
             </aside>
           </section>
         </section>
+
+        <!-- Wiring it to Drupal -->
         <section>
           <section>
             <h3>Enter Drupal</h3>
@@ -267,20 +278,6 @@
               let it be good at what it is<br>
               accessibility
             </aside>
-          </section>
-          <section>
-            <img src="https://www.ostraining.com/cdn/images/steve/media_1395329451848.png">
-          </section>
-          <section>
-            <pre><code class="twig">{% set link = content.field_content_link|field_value[0] %}
-{% include "@molecules/recipe-banner/recipe-banner.twig" with {
-  "banner_image_output_image_tag": TRUE,
-  "banner_title": content.field_title|field_value,
-  "banner_summary": content.field_summary|field_value,
-  "banner_link_url": link['#url'],
-  "banner_link_text": link['#title']
-}%}
-            </code></pre>
           </section>
           <section>
             <h3>What gets rendered?</h3>
@@ -295,21 +292,125 @@
               <li class="fragment">media</li>
             </ul>
           </section>
+          <section data-transition="slide-in fade-out">
+            <h3>Theme Render Pipeline</h3>
+            <img src="https://www.ostraining.com/cdn/images/steve/media_1395329451848.png">
+          </section>
+          <section  data-transition="fade-in fade-out">
+            <h3>Theme Render Pipeline with Pattern Lab</h3>
+            <img src="images/template-render.jpg">
+          </section>
+          <section  data-transition="fade-in slide-out">
+            <h3>Theme Render Pipeline with Pattern Lab</h3>
+            <img src="images/template-render-highlighted.jpg">
+          </section>
+          <section>
+            <pre><code class="twig"><div class="recipe-banner">
+  <div class="recipe-banner__wrapper">
+    <div class="recipe-banner__image">
+      {{ see next slide}}
+    </div>
+    <div class="recipe-banner__content">
+      <h2 class="recipe-banner__title">{{ banner_title }}</h3>
+      <div class="recipe-banner__summary">
+        <p>{{ banner_summary }}</p>
+      </div>
+      <div class="recipe-banner__link">
+        <a href="{{ banner_link_url }}" class="button">{{ banner_link_text }}</a>
+      </div>
+    </div>
+  </div>
+</div>
+            </code></pre>
+          </section>
+          <section><pre><code class="twig"><div class="recipe-banner__image">
+  {% if banner_img_src %}
+    {% include "@atoms/04-images/00-image/responsive-image.twig" with {
+      "img_src": banner_img_src,
+      "img_alt": banner_img_alt,
+      "output_image_tag": banner_image_output_image_tag,
+      "responsive_image_base_class": 'image',
+    } %}
+  {% endif %}
+</div>
+            </code></pre></section>
+          <section>
+            <pre><code class="twig">{# @see core umami theme template for block--bundle--banner-block.html.twig #}
+{% set banner_img_src
+   = content.field_banner_image.0['#item'].entity.uri.value %}
+
+{% set link = content.field_content_link|field_value[0] %}
+
+{% include "@molecules/recipe-banner/recipe-banner.twig" with {
+  "banner_image_output_image_tag": TRUE,
+  "banner_img_src": banner_img_src|image_style('scale_crop_7_3_large'),
+  "banner_img_alt": content.field_banner_image.0['#item'].alt,
+  "banner_title": content.field_title|field_value,
+  "banner_summary": content.field_summary|field_value,
+  "banner_link_url": link['#url'],
+  "banner_link_text": link['#title']
+}%}
+            </code></pre>
+          </section>
+          <section>
+            <h3>Where do I make my pattern again?</h3>
+            <ul>
+              fields &middot;
+              nodes &middot;
+              blocks &middot;
+              views &middot;
+              forms &middot;
+              entities &middot;
+              layouts &middot;
+              media &middot;
+            </ul>
+            <img src="images/template-render-highlighted.jpg">
+            <aside class="notes">
+              good rule of thumb is whether the template has a variable
+            </aside>
+          </section>
+          <section>
+            <h3>Examples</h3>
+            <aside class="notes">
+              Block - recipe banner
+              View - card grid
+            </aside>
+          </section>
         </section>
+
         <section>
           <h3>Further Resources and Frontiers</h3>
           <ul>
             <li class="fragment">Drupal Twig Slack: https://drupaltwig-slack.herokuapp.com</li>
             <li class="fragment">Emulsify.info</li>
             <li class="fragment">Mark Conroy's blog: https://mark.ie</li>
-            <li class="fragment">https://github.com/forumone/gesso-wp</li>
-            <li class="fragment">a-fro.com</li>
-            <li class="fragment">We're hiring!</li>
+            <li class="fragment">My blog: a-fro.com</li>
+            <li class="fragment">Bolt Design System - PL with webcomponents</li>
           </ul>
+          <!-- @todo: figure out where/if.. -->
+          <!-- <section>
+            <img src="https://www.shoutmeloud.com/wp-content/uploads/2018/01/what-is-the-wordpress-gutenberg-editor-4.gif">
+          </section> -->
         </section>
         <section>
-          images
+          <section data-transition="slide-in fade-out">
+            <h3>Expand Beyond the Screen</h3>
+            <img width="75%" class="fragment" src="images/meditation-space.jpg">
+          </section>
+          <section data-transition="fade-in fade-out">
+            <h3>Expand Beyond the Screen</h3>
+            <img width="75%" src="images/roof.jpg">
+          </section>
+          <section data-transition="fade-in fade-out">
+            <h3>Expand Beyond the Screen</h3>
+            <img width="75%" src="images/office-before.jpg">
+          </section>
+          <section data-transition="fade-in slide-out">
+            <h3>Expand Beyond the Screen</h3>
+            <img width="75%" src="images/office-after.jpg">
+          </section>
         </section>
+        <section><h3>Questions?</h3></section>
       </div>
     </div>
 
